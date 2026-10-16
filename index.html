@@ -7,7 +7,6 @@
 
     <title>Savoria Restaurant</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -15,16 +14,12 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
 
-    <!-- =========================
-         LOADING SCREEN
-    ========================== -->
 
     <div id="loading-screen">
 
@@ -38,9 +33,6 @@
     </div>
 
 
-    <!-- =========================
-         HEADER
-    ========================== -->
 
     <header>
 
@@ -72,9 +64,6 @@
     </header>
 
 
-    <!-- =========================
-         HERO
-    ========================== -->
 
     <section
         class="hero"
@@ -113,10 +102,6 @@
     </section>
 
 
-    <!-- =========================
-         ABOUT
-    ========================== -->
-
     <section
         class="about-section"
         id="about"
@@ -153,10 +138,6 @@
     </section>
 
 
-    <!-- =========================
-         MENU
-    ========================== -->
-
     <section
         class="menu-section"
         id="menu"
@@ -174,8 +155,6 @@
 
         <div class="menu-container">
 
-
-            <!-- MENU ITEM 1 -->
 
             <div class="menu-item">
 
@@ -207,7 +186,6 @@
             </div>
 
 
-            <!-- MENU ITEM 2 -->
 
             <div class="menu-item">
 
@@ -239,7 +217,6 @@
             </div>
 
 
-            <!-- MENU ITEM 3 -->
 
             <div class="menu-item">
 
@@ -271,7 +248,6 @@
             </div>
 
 
-            <!-- MENU ITEM 4 -->
 
             <div class="menu-item">
 
@@ -303,7 +279,6 @@
             </div>
 
 
-            <!-- MENU ITEM 5 -->
 
             <div class="menu-item">
 
@@ -334,8 +309,6 @@
 
             </div>
 
-
-            <!-- MENU ITEM 6 -->
 
             <div class="menu-item">
 
@@ -371,11 +344,6 @@
 
     </section>
 
-
-    <!-- =========================
-         CONTACT
-    ========================== -->
-
     <section
         class="contact-section"
         id="contact"
@@ -396,15 +364,15 @@
             <div class="contact-details">
 
                 <p>
-                    📍 123 Main Street, Manila, Philippines
+                    📍 123 Blank Street, Manila, Philippines
                 </p>
 
                 <p>
-                    📞 0912 345 6789
+                    📞 0912-345-6789
                 </p>
 
                 <p>
-                    ✉️ hello@savoria.com
+                    ✉️ migueldevworks@gmail.com
                 </p>
 
                 <p>
@@ -426,10 +394,6 @@
     </section>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
     <footer>
 
         <h3>
@@ -450,15 +414,7 @@
     </footer>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
     <script>
-
-        /* =================================
-           LOADING SCREEN
-        ================================= */
 
         window.addEventListener("load", function () {
 
@@ -472,11 +428,6 @@
 
         });
 
-
-        /* =================================
-           MENU SLIDE-IN ANIMATION
-        ================================= */
-
         const menuItems =
             document.querySelectorAll(".menu-item");
 
@@ -489,22 +440,7 @@
                     entries.forEach(function (entry) {
 
                         if (entry.isIntersecting) {
-
-                            /*
-                             * Add the "show" class.
-                             * This starts the animation.
-                             */
-
                             entry.target.classList.add("show");
-
-
-                            /*
-                             * Stop observing this menu item.
-                             *
-                             * This is what makes the animation
-                             * happen ONLY ONE TIME.
-                             */
-
                             observer.unobserve(entry.target);
 
                         }
@@ -514,20 +450,11 @@
                 },
 
                 {
-                    /*
-                     * Animation starts when about 20%
-                     * of the card becomes visible.
-                     */
 
                     threshold: 0.2
                 }
 
             );
-
-
-        /*
-         * Watch every menu item.
-         */
 
         menuItems.forEach(function (item) {
 
@@ -540,8 +467,3 @@
 </body>
 
 </html>
-```
-
-**Important:** this HTML expects the CSS animation I gave you earlier. Add the `.menu-item`, `.menu-item.show`, `@keyframes slideFromLeft`, and `nth-child` rules to your `style.css`.
-
-The important part is `observer.unobserve(entry.target)`: once each card slides in, it is no longer observed, so **scrolling up and down won't replay the animation**.
